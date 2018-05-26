@@ -405,5 +405,11 @@
     playerTop.style.backgroundSize = "cover";
     playerTop.style.backgroundRepeat = "no-repeat";
 
+    document.getElementsByTagName("body")[0].onclick = function(){
+      coverArt.style.opacity = "0";
+      playerTop.style.backgroundImage = "url(" + coverArt.getAttribute("src") + ")";
+      playerTop.style.backgroundSize = "cover";
+      playerTop.style.backgroundRepeat = "no-repeat";
+    };
   </script>
 </html>
