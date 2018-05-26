@@ -3,6 +3,7 @@ window.onkeydown = function(e) {
 };
 $(document).on('ready', function(){
 
+
   /*
     Handles a click on the down button to slide down the playlist.
   */
@@ -39,7 +40,7 @@ $(document).on('ready', function(){
     Amplitude.setSongPlayedPercentage( ( parseFloat( x ) / parseFloat( this.offsetWidth) ) * 100 );
   });
 
-  $('img[amplitude-song-info="cover_art_url"]').css('height', $('img[amplitude-song-info="cover_art_url"]').width() + 'px' );
+  $('img[amplitude-song-info="cover_art_url"]').css('height', '50vh' );
 });
 
 $(window).on('resize', function(){

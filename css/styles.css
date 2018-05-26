@@ -1,10 +1,16 @@
 body{
-  background-color: rgba(0,0,0,.8);
+  background-color: rgba(0,0,0,1);
+  background-image: url('../album-art/bg.jpg'); 
+  background-size: auto 100vw;
+  background-repeat: no-repeat;
 }
-
+#player-top {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 div#flat-black-player-container {
   position: relative;
-  max-width: 400px;
+  /*max-width: 400px;*/
   margin: auto;
 }
 div#flat-black-player-container div#list-screen {

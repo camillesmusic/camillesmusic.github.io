@@ -31,13 +31,13 @@
 		<!-- Include Style Sheet -->
 		<link rel="stylesheet" type="text/css" href="css/styles.css"/>
   </head>
-  <body style="background: url('album-art/bg.jpg'); background-size: cover;">
+  <body>
     <div class="row">
-      <div class="large-4 medium-6 small-12 large-centered medium-centered columns">
+      <div class="large-6 medium-6 small-12 large-centered medium-centered columns">
         <div id="flat-black-player-container">
             <div id="list-screen" class="slide-in-top">
 
-              <div id="list-screen-header" class="">
+              <div id="list-screen-header" class="hide-playlist">
                 <img id="up-arrow" src="img/up.svg"/>
                 Hide Playlist
               </div>
@@ -160,7 +160,7 @@
                   </div>
 
                   <span class="song-duration">
-                    2:39
+                    --
                   <span>
                 </div>
                 <div class="song amplitude-song-container amplitude-play-pause" amplitude-song-index="8">
@@ -175,7 +175,7 @@
                   </div>
 
                   <span class="song-duration">
-                    1:00
+                    --
                   <span>
                 </div>
                 <div class="song amplitude-song-container amplitude-play-pause" amplitude-song-index="9">
@@ -190,11 +190,41 @@
                   </div>
 
                   <span class="song-duration">
-                    5:25
+                    --
                   <span>
                 </div>
-              </div>
+                <div class="song amplitude-song-container amplitude-play-pause" amplitude-song-index="10">
+                  <span class="song-number-now-playing">
+                    <span class="number">12</span>
+                    <img class="now-playing" src="img/now-playing.svg"/>
+                  </span>
 
+                  <div class="song-meta-container">
+                    <span class="song-name">Smokestack Lightning</span>
+                    <span class="song-artist-album">Howlin Wolf</span>
+                  </div>
+
+                  <span class="song-duration">
+                    --
+                  <span>
+                </div>
+                <div class="song amplitude-song-container amplitude-play-pause" amplitude-song-index="11">
+                  <span class="song-number-now-playing">
+                    <span class="number">11</span>
+                    <img class="now-playing" src="img/now-playing.svg"/>
+                  </span>
+
+                  <div class="song-meta-container">
+                    <span class="song-name">Bambi</span>
+                    <span class="song-artist-album">Jidenna</span>
+                  </div>
+
+                  <span class="song-duration">
+                    --
+                  <span>
+                </div>
+                
+              </div>
               <div id="list-screen-footer">
                 <div id="list-screen-meta-container">
                   <span amplitude-song-info="name" amplitude-main-song-info="true" class="song-name"></span>
@@ -213,10 +243,11 @@
             <div id="player-screen">
               <div class="player-header down-header">
                 <img id="down" src="img/down.svg"/>
-                Show Playlist
+                <h4 style="line-height: 30px;">Show Camille's Playlist</h4>
               </div>
               <div id="player-top">
-                <img amplitude-song-info="cover_art_url" amplitude-main-song-info="true"/>
+                <img id="cover-art" amplitude-song-info="cover_art_url" amplitude-main-song-info="true"/>
+                
               </div>
               <div id="player-progress-bar-container">
                 <progress id="song-played-progress" class="amplitude-song-played-progress" amplitude-main-song-played-progress="true"></progress>
@@ -346,10 +377,33 @@
 					"artist": "Miguel ft Janelle Monae",
 					"album": "",
 					"url": "songs/10 - Janelle Mone - PrimeTime ft Miguel.mp3",
-					"cover_art_url": "album-art/flowers11.jpg"
-				}
+					"cover_art_url": "album-art/flowers10.jpg"
+				},
+        {
+          "name": "Smokestack Lightnin",
+          "artist": "Howlin Wolf",
+          "album": "",
+          "url": "songs/11 - Howlin Wolf - Smokestack Lightnin.mp3",
+          "cover_art_url": "album-art/flowers11.jpg"
+        },
+        {
+          "name": "Bambi",
+          "artist": "Jidenna",
+          "album": "",
+          "url": "songs/12 - Jidenna - Bambi.mp3",
+          "cover_art_url": "album-art/flowers12.jpg"
+        }
 			]
 		});
 
 	</script>
+  <script type="text/javascript">
+    var coverArt = document.getElementById('cover-art');
+    var playerTop = document.getElementById('player-top');
+    coverArt.style.opacity = "0";
+    playerTop.style.backgroundImage = "url(" + coverArt.getAttribute("src") + ")";
+    playerTop.style.backgroundSize = "cover";
+    playerTop.style.backgroundRepeat = "no-repeat";
+
+  </script>
 </html>
